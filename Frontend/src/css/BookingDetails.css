@@ -1,72 +1,105 @@
+/* ═══════════════════════════════════════════
+   BOOKING DETAILS
+════════════════════════════════════════════ */
 .details-container {
-  margin: 20px;
+  margin: 0;
+  padding: 2rem 2rem 4rem;
+  min-height: calc(100vh - 5.75rem);
+  background: linear-gradient(160deg, #f0faf4 0%, #e6f4ec 100%);
 }
 
 .details-header {
-  font-size: 24px;
-  margin: 10px;
-  padding: 0px 0.6rem;
-  color: black;
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin: 0 0 0.25rem 0;
+  color: #0e2218;
+  letter-spacing: -0.02em;
 }
 
 .details-location {
-  margin: auto;
+  margin: 0 0 1.5rem 0;
   width: 100%;
   display: flex;
-  padding: 0px 0.9rem;
+  padding: 0;
   align-items: center;
+  color: #0e8b53;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.details-location .material-symbols-outlined {
+  font-size: 1.1rem;
+  margin-right: 4px;
 }
 
+/* ── Info panel ── */
 .details-information-container {
-  width: 98%;
-  margin: 1rem 1% 2rem 1%;
+  width: 100%;
+  margin: 0 0 2rem 0;
   display: flex;
   flex-wrap: wrap;
   height: auto;
-  background-color: lightgray;
+  background: #ffffff;
   align-items: center;
   justify-content: space-between;
-  border-radius: 10px;
-  padding: 1rem;
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  border: 1px solid #e8f0eb;
+  gap: 1.5rem;
 }
 
 .details-information {
   display: flex;
   flex-direction: column;
+  gap: 0.75rem;
 }
 
 .booking-stay-information {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .details {
   display: flex;
   margin-right: 0.5rem;
-  color: grey;
-  font-size: 13px;
+  color: #5b7a6a;
+  font-size: 0.82rem;
+  font-weight: 500;
 }
 
 .stay-icon {
-  font-size: 20px;
-  color: grey;
+  font-size: 1.25rem;
+  color: #0e8b53;
 }
 
+/* ── Price badge ── */
 .details-total-price {
-  background-color: rgb(94, 14, 169);
-  color: rgb(255, 255, 255);
-  padding: 1rem;
-  border-radius: 12px;
+  background: linear-gradient(135deg, #0e8b53 0%, #0a6e41 100%);
+  color: #ffffff;
+  padding: 1.25rem 1.75rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(14, 139, 83, 0.35);
+  text-align: center;
+  min-width: 10rem;
 }
 
 .price-header {
-  margin: 0px;
-  padding: 0px;
-  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+  margin-bottom: 0.35rem;
 }
 
 .price-in-number {
-  font-size: 24px;
-  margin: 0px;
-  padding: 0px;
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  padding: 0;
+  letter-spacing: -0.02em;
 }

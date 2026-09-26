@@ -1,5 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
+/* ═══════════════════════════════════════════
+   AUTH PAGES (Login / Signup / Forgot / Reset)
+════════════════════════════════════════════ */
 .wrapper {
   display: flex;
   justify-content: center;
@@ -7,50 +11,92 @@
   margin: 0;
   padding: 3rem 1rem 4rem 1rem;
   min-height: calc(100vh - 5.75rem);
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", "Poppins", sans-serif;
   width: 100%;
-  background: linear-gradient(180deg, #eef7f1 0%, #f6fbf8 100%);
+  background: linear-gradient(160deg, #f0faf4 0%, #e6f4ec 50%, #ddf0e6 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative circles */
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.wrapper::before {
+  width: 28rem;
+  height: 28rem;
+  background: radial-gradient(circle, rgba(14, 139, 83, 0.12) 0%, transparent 70%);
+  top: -8rem;
+  right: -8rem;
+}
+.wrapper::after {
+  width: 20rem;
+  height: 20rem;
+  background: radial-gradient(circle, rgba(14, 139, 83, 0.09) 0%, transparent 70%);
+  bottom: -5rem;
+  left: -5rem;
 }
 
 .wrapper form {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 26rem;
   background: #ffffff;
-  padding: 2.5rem 2.25rem;
-  border-radius: 20px;
+  padding: 2.75rem 2.5rem;
+  border-radius: 24px;
   border-top: 4px solid #0e8b53;
-  box-shadow: 0 8px 28px rgba(14, 139, 83, 0.14);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.04),
+    0 20px 48px rgba(14, 139, 83, 0.12);
   margin-bottom: 0;
 }
 
 .wrapper form h1 {
   text-align: center;
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #14432c;
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #0e2218;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.03em;
+}
+
+.wrapper form > .subtitle,
+.wrapper form > p {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6d8a79;
   margin-bottom: 1.75rem;
 }
 
 .wrapper .form-group {
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.15rem;
 }
 
 .wrapper label {
   display: block;
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 0.82rem;
+  font-weight: 600;
   color: #14432c;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.01em;
 }
 
 .wrapper .form-control {
   width: 100%;
-  height: 2.75rem;
-  padding: 0 0.9rem;
-  font-size: 0.9rem;
-  border: 1px solid #d9ebe1;
-  border-radius: 10px;
-  background: #fbfefc;
+  height: 2.85rem;
+  padding: 0 1rem;
+  font-size: 0.92rem;
+  font-family: inherit;
+  border: 1.5px solid #d9ebe1;
+  border-radius: 12px;
+  background: #f8fcfa;
+  color: #1a2b22;
   transition: all 0.2s ease;
 }
 
@@ -58,36 +104,59 @@
   outline: none;
   border-color: #0e8b53;
   background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(14, 139, 83, 0.15);
+  box-shadow: 0 0 0 4px rgba(14, 139, 83, 0.12);
+}
+
+.wrapper .form-control::placeholder {
+  color: #a8c0b4;
 }
 
 .wrapper form .loginbutton {
   width: 100%;
-  background-color: #0e8b53;
+  background: linear-gradient(135deg, #0e8b53, #0a6e41);
   border: none;
   color: white;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  margin-top: 1.5rem;
-  box-shadow: 0 4px 12px rgba(14, 139, 83, 0.3);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 1.75rem;
+  box-shadow: 0 6px 20px rgba(14, 139, 83, 0.35);
   border-radius: 12px;
-  transition: all 0.2s ease;
+  padding: 0.8rem;
+  transition: all 0.22s ease;
 }
 
 .wrapper form .loginbutton:hover {
-  background-color: #0a6e41;
+  background: linear-gradient(135deg, #0b7344, #085e37);
   color: #ffffff;
-  box-shadow: 0 6px 16px rgba(14, 139, 83, 0.4);
-  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(14, 139, 83, 0.45);
+  transform: translateY(-2px);
+}
+
+.wrapper form .loginbutton:active {
+  transform: translateY(0);
 }
 
 .wrapper form a {
   font-size: 0.85rem;
   color: #0e8b53;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  transition: color 0.15s;
 }
 
 .wrapper form a:hover {
+  color: #0a6e41;
   text-decoration: underline;
+}
+
+/* ── Divider line for links below button ── */
+.wrapper .form-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #eef4f0;
 }
