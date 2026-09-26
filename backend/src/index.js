@@ -23,6 +23,11 @@ app.use(express.urlencoded({limit:"100mb", extended:true}))
 //cookieParser
 app.use(cookieParser())
 
+app.use(cors({
+    origin:process.env.ORIGIN_ACCESS_URL,
+    credentials:true
+}))
+
 const port = process.env.PORT;
 
 
