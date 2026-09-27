@@ -23,10 +23,32 @@ app.use(express.urlencoded({limit:"100mb", extended:true}))
 //cookieParser
 app.use(cookieParser())
 
-app.use(cors({
-    origin:process.env.ORIGIN_ACCESS_URL,
-    credentials:true
-}))
+const configuredOrigins = process.env.ORIGIN_ACCESS_URL
+  ? process.env.ORIGIN_ACCESS_URL.split(",").map((url) => url.trim().replace(/\/+$/, ""))
+  : [];
+
+const defaultOrigins = [
+  "http://localhost:5173",
+  "https://homelyhubrent.netlify.app",
+];
+
+const allowedOrigins = Array.from(new Set([...configuredOrigins, ...defaultOrigins]));
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      // allow requests with no origin (like mobile apps, curl, etc.)
+      if (!origin) return callback(null, true);
+
+      const normalizedOrigin = origin.replace(/\/+$/, "");
+      if (allowedOrigins.includes(normalizedOrigin)) {
+        return callback(null, true);
+      }
+      return callback(new Error(`Origin ${origin} not allowed by CORS`));
+    },
+    credentials: true,
+  })
+);
 
 const port = process.env.PORT;
 

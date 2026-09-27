@@ -292,7 +292,8 @@ const forgotPassword = async (req, res) => {
 
     // The link the user will click. It points at the FRONTEND
     // address, with the plain token at the end.
-    const resetURL = `${process.env.ORIGIN_ACCESS_URL}/user/resetPassword/${resetToken}`;
+    const frontendBaseUrl = (process.env.ORIGIN_ACCESS_URL || "http://localhost:5173").replace(/\/+$/, "");
+    const resetURL = `${frontendBaseUrl}/user/resetPassword/${resetToken}`;
 
     // A second try inside the first one, only for the email.
     try {
